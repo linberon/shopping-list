@@ -7,13 +7,13 @@ $(function() {
   //Rendering the data. renderElement(item) returns HTML for ONE element in the todoItems array
 
   function renderElement(item, index) {
-      return `<li>
+    return `<li>
                     <span class="shopping-item">${item.name}</span>
                 <div class="shopping-item-controls">
-                  <button data-index="${item.index}" class="shopping-item-toggle">
+                  <button data-index="${index}" class="shopping-item-toggle">
                     <span class="button-label">check</span>
                     </button>
-                    <button data-index="${item.index}" class="shopping-item-delete">
+                    <button data-index="${index}" class="shopping-item-delete">
                     <span class="button-label">delete</span>
                   </button>
                 </div>
@@ -44,9 +44,9 @@ $(function() {
   });
 
   // Add an event listener for the check buttons.
- 
   $(".shopping-list").on("click", ".shopping-item-delete", function() {
     var index = $(this).attr("data-index");
+    console.log(index);
     state.toDoItems.splice(index, 1);
     renderAllElements();
   });
@@ -54,11 +54,12 @@ $(function() {
   renderAllElements();
 });
 
-
- $(".shopping-list").on("click", ".shopping-item-toggle", function() {
-    var itemIndex = $(event.currentTarget).find("li").attr("data-index");
-    $(".shopping-item").attr("data-index", itemIndex).toggleClass("shopping-item__checked");
-    renderAllElements();
-  });
-
-  renderAllElements();
+// $(".shopping-list").on("click", ".shopping-item-toggle", function() {
+//   var itemIndex = $(event.currentTarget)
+//     .find("li")
+//     .attr("data-index");
+//   $(".shopping-item")
+//     .attr("data-index", itemIndex)
+//     .toggleClass("shopping-item__checked");
+//   renderAllElements();
+// });
