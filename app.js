@@ -1,18 +1,24 @@
 $(function() {
   //Create a state object, with a todoItems array.
   state = {
-    toDoItems: []
+    toDoItems: [
+      { name: "Carrots", checked: false },
+      { name: "Something", checked: true }
+    ]
   };
 
+  renderAllElements();
   //Rendering the data. renderElement(item) returns HTML for ONE element in the todoItems array
 
   function renderElement(item, index) {
+    var checked = item.checked ? "shopping-item__checked" : "";
+
     return `<li>
-                    <span class="shopping-item">${item.name}</span>
+                <span class="shopping-item ${checked}" >${item.name}</span>
                 <div class="shopping-item-controls">
                   <button data-index="${index}" class="shopping-item-toggle">
                     <span class="button-label">check</span>
-                    </button>
+                  </button>
                     <button data-index="${index}" class="shopping-item-delete">
                     <span class="button-label">delete</span>
                   </button>
@@ -45,21 +51,14 @@ $(function() {
 
   // Add an event listener for the check buttons.
   $(".shopping-list").on("click", ".shopping-item-delete", function() {
-    var index = $(this).attr("data-index");
-    console.log(index);
-    state.toDoItems.splice(index, 1);
+    var itemIndex = $(this).attr("data-index");
+    state.toDoItems.splice(itemIndex, 1);
     renderAllElements();
   });
 
-  renderAllElements();
+  $(".shopping-list").on("click", ".shopping-item-toggle", function() {
+    var itemIndex = $(this).attr("data-index");
+    state.toDoItems[itemIndex].checked = !state.toDoItems[itemIndex].checked;
+    renderAllElements();
+  });
 });
-
-// $(".shopping-list").on("click", ".shopping-item-toggle", function() {
-//   var itemIndex = $(event.currentTarget)
-//     .find("li")
-//     .attr("data-index");
-//   $(".shopping-item")
-//     .attr("data-index", itemIndex)
-//     .toggleClass("shopping-item__checked");
-//   renderAllElements();
-// });
