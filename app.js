@@ -2,8 +2,8 @@ $(function() {
   //Create a state object, with a todoItems array.
   state = {
     toDoItems: [
-      { name: "Carrots", checked: false },
-      { name: "Something", checked: true }
+      { name: "apples", checked: false },
+      { name: "bread", checked: true }
     ]
   };
 
@@ -48,6 +48,7 @@ $(function() {
     var name = $("#shopping-list-entry").val();
     addItem(name);
   });
+
 
   // Add an event listener for the check buttons.
   $(".shopping-list").on("click", ".shopping-item-delete", function() {

@@ -3,11 +3,32 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  background-image: url(fabric.JPG);
+  background-size: cover;
+}
+
+h1{
+  font-family: 'Lobster', cursive;
+  font-size: 10vh;
+  color: #c93116;
+  opacity: 0.8;
+}
+
+button{
+  font-family: 'Lobster', cursive;
+  background-color: #ffc53f;
+  color: #c93116;
+}
+
+input[type="text"]{
+  background-color: #fff4db;
+  font-family: 'Kalam', cursive;
+  text-transform: uppercase;
 }
 
 button, input[type="text"] {
-  padding: 5px;
+  padding: 5px; 
+  border: 0px;
 }
 
 button:hover {
@@ -18,10 +39,6 @@ button:hover {
   width: 250px;
 }
 
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-}
 
 .shopping-list {
   list-style: none;
@@ -29,15 +46,19 @@ button:hover {
 }
 
 .shopping-list > li {
+  font-family: 'Kalam', cursive;
+  color: #151354;
+  text-transform: uppercase;
   margin-bottom: 20px;
-  border: 1px solid grey;
+  border: 1px solid #ffc53f;
   padding: 20px;
+  width: 70%;
+  background-color: #fff4db;
+  opacity: 0.9;
 }
 
 .shopping-item {
   display: block;
-  color: grey;
-  font-style: italic;
   font-size: 20px;
   margin-bottom: 15px;
 }
