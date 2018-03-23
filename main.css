@@ -7,27 +7,28 @@ body {
   background-size: cover;
 }
 
-h1{
-  font-family: 'Lobster', cursive;
+h1 {
+  font-family: "Lobster", cursive;
   font-size: 10vh;
   color: #c93116;
   opacity: 0.8;
 }
 
-button{
-  font-family: 'Lobster', cursive;
+button {
+  font-family: "Lobster", cursive;
   background-color: #ffc53f;
   color: #c93116;
 }
 
-input[type="text"]{
+input[type="text"] {
   background-color: #fff4db;
-  font-family: 'Kalam', cursive;
+  font-family: "Kalam", cursive;
   text-transform: uppercase;
 }
 
-button, input[type="text"] {
-  padding: 5px; 
+button,
+input[type="text"] {
+  padding: 5px;
   border: 0px;
 }
 
@@ -39,14 +40,13 @@ button:hover {
   width: 250px;
 }
 
-
 .shopping-list {
   list-style: none;
   padding-left: 0;
 }
 
 .shopping-list > li {
-  font-family: 'Kalam', cursive;
+  font-family: "Kalam", cursive;
   color: #151354;
   text-transform: uppercase;
   margin-bottom: 20px;
